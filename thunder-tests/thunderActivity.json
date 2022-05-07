@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "482834ef-6864-44e9-9668-f30e0ee139a3",
+    "colId": "history",
+    "containerId": "",
+    "name": "{{host}}/ping",
+    "url": "{{host}}/ping",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-05-07T21:49:02.547Z",
+    "modified": "2022-05-07T21:49:24.843Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  }
+]
