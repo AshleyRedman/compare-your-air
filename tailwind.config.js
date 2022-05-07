@@ -3,11 +3,9 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
     content: ['./src/**/*.{js,ts,jsx,tsx}'],
     theme: {
-        // https://fonts.google.com/specimen/Open+Sans
         fontFamily: {
-            sans: ['Archivo', ...defaultTheme.fontFamily.sans]
+            sans: ['Open Sans', ...defaultTheme.fontFamily.sans]
         },
-        // Obtained via Mac app 'Sip' color picker
         colors: {
             white: {
                 50: '#ffffff',
@@ -19,7 +17,10 @@ module.exports = {
             },
             purple: '#7936ae',
             blue: '#4575ae',
-            gray: '#bebebe'
+            gray: {
+                50: '#f2f2f2',
+                500: '#bebebe'
+            }
         },
         extend: {}
     },

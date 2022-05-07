@@ -1,0 +1,29 @@
+[
+  {
+    "_id": "42e0ef4f-8526-4581-a88f-e9d10ab3b6d6",
+    "colName": "OpenAQ",
+    "created": "2022-05-07T21:49:57.178Z",
+    "sortNum": 10000,
+    "folders": [
+      {
+        "_id": "f04178e9-17a3-48e3-a5ca-646e61994017",
+        "name": "Default",
+        "containerId": "",
+        "created": "2022-05-07T21:51:52.295Z",
+        "sortNum": 10000
+      },
+      {
+        "_id": "6b17f8cc-3308-4420-870a-8b679c85a072",
+        "name": "v2",
+        "containerId": "",
+        "created": "2022-05-07T21:53:03.673Z",
+        "sortNum": 30000
+      }
+    ],
+    "settings": {
+      "headers": [],
+      "tests": [],
+      "envId": "b2038c13-b455-411e-9edb-25f942fec68b"
+    }
+  }
+]

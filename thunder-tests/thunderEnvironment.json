@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "b2038c13-b455-411e-9edb-25f942fec68b",
+    "name": "prod",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2022-05-07T21:47:57.955Z",
+    "modified": "2022-05-07T21:52:27.173Z",
+    "data": [
+      {
+        "name": "host",
+        "value": "https://u50g7n0cbj.execute-api.us-east-1.amazonaws.com/"
+      },
+      {
+        "name": "version",
+        "value": "v2"
+      }
+    ]
+  }
+]
