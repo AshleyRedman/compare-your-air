@@ -8,7 +8,10 @@ const Home: NextPage = (): ReactElement => {
     const [selectedLocations, setSelectedLocations] = useState<I.Location[]>([]);
 
     const add = useCallback(
-        (location: I.Location) => setSelectedLocations([...selectedLocations, location]),
+        (location: I.Location) => {
+            // UX choice here, do newly added items get prepended or appended, i have gone for prepended
+            if (!selectedLocations.includes(location)) setSelectedLocations([location, ...selectedLocations]);
+        },
         [selectedLocations]
     );
 
@@ -18,27 +21,29 @@ const Home: NextPage = (): ReactElement => {
     );
 
     return (
-        <>
-            <div className="container mx-auto mt-16 space-y-8 px-8 xl:mt-24 xl:space-y-12">
-                <h1 className="mx-auto w-fit text-center text-3xl font-semibold xl:text-5xl">Compare your Air</h1>
-                <article className="space-y-3 lg:space-y-2">
-                    <p className="mx-auto w-fit text-center text-xl leading-snug lg:text-2xl">
-                        Compare the air quality between cities in the UK.
-                    </p>
-                    <p className="mx-auto w-fit text-center text-xl leading-snug lg:text-2xl">
-                        Select cities to compare using the search tool below.
-                    </p>
-                </article>
+        <section className="container mx-auto mt-16 px-8 xl:mt-24">
+            <h1 className="mx-auto w-fit text-center text-3xl font-semibold xl:text-5xl">Compare your Air</h1>
+            <article className="mt-8 space-y-3 lg:space-y-2">
+                <p className="mx-auto w-fit text-center text-xl leading-snug lg:text-2xl">
+                    Compare the air quality between cities in the UK.
+                </p>
+                <p className="mx-auto w-fit text-center text-xl leading-snug lg:text-2xl">
+                    Select cities to compare using the search tool below.
+                </p>
+            </article>
 
-                <div className="mx-auto lg:w-5/12">
-                    <Search selectLocation={add} />
-                </div>
-
-                {selectedLocations.map((location) => (
-                    <Card key={location.city} location={location} lastUpdated={new Date()} removeCallback={remove} />
-                ))}
+            <div className="mx-auto mt-12 lg:w-5/12">
+                <Search selectLocation={add} />
             </div>
-        </>
+
+            {!!selectedLocations.length && (
+                <div className="mt-10 grid gap-4 lg:mt-24 lg:grid-cols-2 xl:mx-36 xl:gap-16">
+                    {selectedLocations.map((location) => (
+                        <Card key={location.id} location={location} removeCallback={remove} />
+                    ))}
+                </div>
+            )}
+        </section>
     );
 };
 
