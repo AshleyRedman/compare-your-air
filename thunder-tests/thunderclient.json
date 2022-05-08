@@ -46,13 +46,24 @@
     "colId": "42e0ef4f-8526-4581-a88f-e9d10ab3b6d6",
     "containerId": "6b17f8cc-3308-4420-870a-8b679c85a072",
     "name": "Locations",
-    "url": "{{host}}/{{version}}/locations",
+    "url": "{{host}}/{{version}}/locations?country_id=GB&city=London",
     "method": "GET",
     "sortNum": 50000,
     "created": "2022-05-07T21:56:12.250Z",
-    "modified": "2022-05-07T21:56:31.128Z",
+    "modified": "2022-05-08T21:51:49.132Z",
     "headers": [],
-    "params": [],
+    "params": [
+      {
+        "name": "country_id",
+        "value": "GB",
+        "isPath": false
+      },
+      {
+        "name": "city",
+        "value": "London",
+        "isPath": false
+      }
+    ],
     "tests": []
   },
   {
@@ -74,6 +85,26 @@
       },
       {
         "name": "country",
+        "value": "GB",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "d0b9070c-995f-496b-b81b-9c5d3ee2b8f8",
+    "colId": "42e0ef4f-8526-4581-a88f-e9d10ab3b6d6",
+    "containerId": "6b17f8cc-3308-4420-870a-8b679c85a072",
+    "name": "Countries",
+    "url": "{{host}}/{{version}}/countries?country_id=GB",
+    "method": "GET",
+    "sortNum": 70000,
+    "created": "2022-05-08T22:21:41.893Z",
+    "modified": "2022-05-08T22:22:16.039Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "country_id",
         "value": "GB",
         "isPath": false
       }

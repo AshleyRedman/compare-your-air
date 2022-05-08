@@ -28,7 +28,9 @@ const App = ({ Component, pageProps }: AppProps): ReactElement => {
                     errorRetryCount: 3
                 }}
             >
-                <Component {...pageProps} />
+                <main>
+                    <Component {...pageProps} />
+                </main>
             </SWRConfig>
         </>
     );

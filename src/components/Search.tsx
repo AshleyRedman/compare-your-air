@@ -15,22 +15,22 @@ const Search: FC<Props> = ({ selectLocation }): ReactElement => {
     const [query, setQuery] = useState('');
     const [showResults, setShowResults] = useState(false);
 
-    /**
-     * @description API query
-     * - api doesn't have a fuzzy search or part query search, only full text search
-     * - api only finds results in the correct case, this ideally would be normalized on the api side, but instead as
-     *   a cheap fix, i'm uppercasing the first letter of the query, but this does not always work.
-     * @see https://docs.openaq.org/#/v2/cities_get_v2_cities_get
-     */
     const { data, isValidating } = useSWR(
-        `${api.url}/cities?country=GB${query.length ? `&city=${query.charAt(0).toUpperCase() + query.slice(1)}` : ''}`,
+        `${api.url}/locations?country_id=GB${
+            query.length ? `&city=${query.charAt(0).toUpperCase() + query.slice(1)}` : ''
+        }`,
         {
             fallback: []
         }
     );
 
     return (
-        <ClickAwayListener onClickAway={() => setShowResults(false)}>
+        <ClickAwayListener
+            onClickAway={() => {
+                setShowResults(false);
+                setQuery('');
+            }}
+        >
             <div className="relative">
                 <div className="relative z-20">
                     <input
@@ -65,18 +65,18 @@ const Search: FC<Props> = ({ selectLocation }): ReactElement => {
                                     !!data?.results.length &&
                                     data.results.map((location: I.Location) => (
                                         <button
-                                            key={location.city}
+                                            key={location.id}
                                             className="block w-full truncate py-2 px-4 text-left outline-none hover:bg-gray-50 focus:bg-gray-50"
-                                            aria-label={location.city}
+                                            aria-label={location.name}
                                             onClick={() => {
                                                 selectLocation(location);
                                                 setShowResults(false);
                                                 setSelected('');
                                             }}
-                                            onMouseEnter={() => setSelected(location.city)}
+                                            onMouseEnter={() => setSelected(location.name)}
                                             onMouseLeave={() => setSelected('')}
                                         >
-                                            {location.city}
+                                            {location.name}
                                         </button>
                                     ))}
 
