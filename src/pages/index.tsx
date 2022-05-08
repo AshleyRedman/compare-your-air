@@ -37,7 +37,7 @@ const Home: NextPage = (): ReactElement => {
             </div>
 
             {!!selectedLocations.length && (
-                <div className="mt-10 grid gap-4 lg:mt-16 lg:grid-cols-2 xl:mx-36 xl:gap-x-16 xl:gap-y-12">
+                <div className="mt-10 grid gap-4 lg:mt-24 lg:grid-cols-2 xl:mx-36 xl:gap-16">
                     {selectedLocations.map((location) => (
                         <Card key={location.id} location={location} removeCallback={remove} />
                     ))}

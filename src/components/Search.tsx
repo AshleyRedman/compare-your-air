@@ -39,7 +39,7 @@ const Search: FC<Props> = ({ selectLocation }): ReactElement => {
                         placeholder="Enter city name"
                         autoComplete="off"
                         aria-busy={isValidating}
-                        className="w-full rounded-xl border-2 border-gray-500 py-3 px-4 pl-12 text-sm leading-5 text-black-50 outline-none"
+                        className="w-full rounded-xl border-2 border-gray-500 p-4 pl-12 leading-5 text-black-50 outline-none"
                         onChange={(e) => {
                             setQuery(e.target.value);
                             setSelected(e.target.value);
