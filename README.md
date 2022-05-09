@@ -11,5 +11,3 @@
 -   Design shows the autocomplete dropdown as relative, i.e pushed the grid items down. This causes some bad layout shift. I have stuck to the brief but generally I would push back and show what it would look like if it were absolute, i.e ontop of the grid items, no layout shift etc...
 
 ---
-
-#### A tech test provided by [DEPT](https://www.deptagency.com/en-gb/)
